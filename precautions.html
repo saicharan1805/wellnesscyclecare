@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precautions & Tips - Menstrual Cycle Tracker</title>
+    <style>
+        /* Importing Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+            margin: 0;
+        }
+
+        /* Container */
+        .container {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #e91e63;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Tips List */
+        ul {
+            text-align: left;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            list-style: none;
+            padding: 12px;
+            background: #f8bbd0;
+            border-radius: 8px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background: #f48fb1;
+            transform: translateX(5px);
+        }
+
+        /* Home Button */
+        .home-button {
+            margin-top: 15px;
+            padding: 12px;
+            background: linear-gradient(to right, #e91e63, #ff4081);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(233, 30, 99, 0.3);
+        }
+
+        .home-button:hover {
+            background: linear-gradient(to right, #c2185b, #d81b60);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+
+            li {
+                font-size: 14px;
+            }
+        }
+        body {
+  background-image: url('3d4d808d5885ff92b9d37a6336394a89.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Precautions & Tips</h2>
+        <p>Follow these important precautions for a healthier menstrual cycle:</p>
+        <ul>
+            <li>🩸 Track your cycle regularly to avoid surprises.</li>
+            <li>🥗 Maintain a healthy diet rich in iron and vitamins.</li>
+            <li>💧 Stay hydrated to reduce bloating and cramps.</li>
+            <li>🛌 Get enough rest and manage stress effectively.</li>
+            <li>🏋️‍♀️ Exercise moderately, but avoid overexertion.</li>
+            <li>🚫 Avoid excessive caffeine and junk food.</li>
+            <li>🩺 Consult a doctor if you notice irregular periods.</li>
+            <li>🛑 Practice safe sex to prevent infections and unplanned pregnancy.</li>
+        </ul>
+        <button class="home-button" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+</html>

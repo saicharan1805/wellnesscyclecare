@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Cycle Tracker</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fde2e4;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s ease-in;
+        }
+        .container {
+            background: white;
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        h2 {
+            color: #e91e63;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 14px;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Form Styling */
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e91e63;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+        input:focus {
+            border-color: #c2185b;
+            box-shadow: 0px 0px 8px rgba(233, 30, 99, 0.5);
+        }
+        button {
+            background: linear-gradient(to right, #e91e63, #ff4081);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(233, 30, 99, 0.3);
+        }
+        button:hover {
+            background: linear-gradient(to right, #c2185b, #d81b60);
+            transform: scale(1.05);
+        }
+        
+        /* Navigation Buttons */
+        .nav-buttons {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            width: auto;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        /* Cycle Result */
+        #result {
+            font-size: 16px;
+            color: #d81b60;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* History Section */
+        .history {
+            text-align: left;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #fff3f5;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .history h4 {
+            color: #d81b60;
+            font-size: 16px;
+        }
+        .history ul {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .history li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+        }
+        body {
+  background-image: url('pink-floral-background-i5alwr3andfxczh6 (1).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+    </style>
+</head>
+<body>
+    
+    </div>
+    <div class="container">
+        <img src="logo.png" alt="Menstrual Cycle Tracker Logo">
+        <h2>WELLNESS CYCLE</h2>
+        <p>Track your cycle and predict your next period & fertile days!</p>
+        
+        <form id="trackerForm">
+            <label for="lastPeriod">Last Period Start Date:</label>
+            <input type="date" id="lastPeriod" required>
+
+            <label for="cycleLength">Average Cycle Length (days):</label>
+            <input type="number" id="cycleLength" min="20" max="40" required>
+
+            <button type="button" onclick="calculateCycle()">Track Cycle</button>
+        </form>
+
+        <h3 id="result"></h3>
+
+        <div class="history">
+            <h4>Previous Tracking Results:</h4>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+
+    <script>
+        function calculateCycle() {
+            const lastPeriodDate = new Date(document.getElementById('lastPeriod').value);
+            const cycleLength = parseInt(document.getElementById('cycleLength').value);
+            
+            if (!lastPeriodDate || isNaN(cycleLength)) {
+                alert('Please enter valid details.');
+                return;
+            }
+            
+            const nextPeriod = new Date(lastPeriodDate);
+            nextPeriod.setDate(nextPeriod.getDate() + cycleLength);
+            
+            const ovulationDate = new Date(lastPeriodDate);
+            ovulationDate.setDate(ovulationDate.getDate() + (cycleLength - 14));
+            
+            const resultText = `Next Period: <strong>${nextPeriod.toDateString()}</strong><br>
+                                Estimated Ovulation: <strong>${ovulationDate.toDateString()}</strong>`;
+            document.getElementById('result').innerHTML = resultText;
+
+            saveToHistory(lastPeriodDate.toDateString(), nextPeriod.toDateString(), ovulationDate.toDateString());
+        }
+
+        function saveToHistory(lastPeriod, nextPeriod, ovulationDate) {
+            let history = JSON.parse(localStorage.getItem('cycleHistory')) || [];
+            history.unshift({ lastPeriod, nextPeriod, ovulationDate });
+            localStorage.setItem('cycleHistory', JSON.stringify(history));
+            displayHistory();
+        }
+
+        function displayHistory() {
+            const historyList = document.getElementById('historyList');
+            historyList.innerHTML = '';
+            let history = JSON.parse(localStorage.getItem('cycleHistory')) || [];
+            history.forEach(record => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>Last Period:</strong> ${record.lastPeriod} | 
+                                <strong>Next Period:</strong> ${record.nextPeriod} | 
+                                <strong>Ovulation:</strong> ${record.ovulationDate}`;
+                historyList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayHistory);
+    </script>
+
+</body>
+<button onclick="window.location.href='index.html'">Back to Home</button>
+</html>

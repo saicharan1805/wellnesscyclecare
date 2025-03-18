@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Cycle Nutrition</title>
+    <style>
+        /* Importing Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Container */
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #e91e63;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Phase Section */
+        .phase {
+            background: #fff3f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .phase:hover {
+            transform: scale(1.03);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            color: #d81b60;
+            font-weight: 600;
+        }
+
+        ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            margin: 8px 0;
+            list-style: none;
+            padding: 8px;
+            background: #f8bbd0;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background: #f48fb1;
+            transform: translateX(5px);
+        }
+
+        /* Images */
+        .phase img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .phase:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Button */
+        button {
+            background: linear-gradient(to right, #e91e63, #ff4081);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(233, 30, 99, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #c2185b, #d81b60);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+
+            li {
+                font-size: 14px;
+            }
+        }
+        body {
+  background-image: url('360_F_356630808_v0ePgo8pOpzTYXoHSnmhQzvtezh9UeLG.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Food to Support Your Cycle</h2>
+        <p>Support your body with the right food for every phase of your cycle.</p>
+
+        <div class="phase">
+            <img src="1stfood.webp" alt="Iron-rich foods">
+            <h3>Menstrual Phase (Days 1-5)</h3>
+            <p><strong>Best Foods:</strong> Iron-rich foods to replenish lost nutrients.</p>
+            <ul>
+                <li>🥬 Spinach, kale, and other leafy greens</li>
+                <li>🐟 Lean meats and fish</li>
+                <li>🍛 Lentils and beans</li>
+                <li>🍫 Dark chocolate (for magnesium & iron)</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <img src="2nd food.webp" alt="Energy-boosting foods">
+            <h3>Follicular Phase (Days 6-14)</h3>
+            <p><strong>Best Foods:</strong> Energy-boosting and nutrient-dense foods.</p>
+            <ul>
+                <li>🥚 Eggs and avocados</li>
+                <li>🍊 Fresh fruits like oranges and berries</li>
+                <li>🥒 Fermented foods (yogurt, kimchi) for gut health</li>
+                <li>🌰 Nuts and seeds (omega-3s for hormone balance)</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <img src="3rdfood.webp" alt="Omega-3 rich foods">
+            <h3>Ovulation Phase (Days 14-17)</h3>
+            <p><strong>Best Foods:</strong> Support fertility with healthy fats and antioxidants.</p>
+            <ul>
+                <li>🐟 Salmon and flaxseeds (rich in omega-3s)</li>
+                <li>🥚 Eggs and lean protein</li>
+                <li>🥕 Colorful vegetables (bell peppers, carrots)</li>
+                <li>🍉 Watermelon and pomegranate (boost circulation)</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <img src="4thfood.webp" alt="Magnesium-rich foods">
+            <h3>Luteal Phase (Days 18-28)</h3>
+            <p><strong>Best Foods:</strong> Reduce PMS symptoms with calming and magnesium-rich foods.</p>
+            <ul>
+                <li>🍌 Bananas and dark chocolate (magnesium for mood)</li>
+                <li>🌾 Whole grains (quinoa, brown rice)</li>
+                <li>🍵 Chamomile tea and herbal infusions</li>
+                <li>🍠 Sweet potatoes (help balance blood sugar)</li>
+            </ul>
+        </div>
+
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+
+</body>
+</html>

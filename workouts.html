@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Cycle Workouts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff6392, #ff8f70);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff476d;
+            padding: 15px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 20px;
+            background: #ff476d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #ff2a50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Workout Display */
+        .phase {
+            margin: 20px auto;
+            padding: 20px;
+            border-left: 5px solid #ff476d;
+            background: rgba(255, 239, 245, 0.9);
+            border-radius: 10px;
+            font-size: 18px;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+        /* Permanent Home Link */
+        .home-link {
+            display: inline-block;
+            margin: 30px auto;
+            padding: 12px 24px;
+            background: #ff6392; /* Light Pink */
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .home-link:hover {
+            background: #ff2a50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        body {
+  background-image: url('female-sport-equipment-on-a-pink-background (1).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Menstrual Cycle Workouts</h1>
+    <div class="container">
+        <img src="47ebbb99aed5255b1d984e588da0ad8e.jpeg" alt="Iron-rich foods">
+          
+        <h2>Select Your Cycle Phase</h2>
+        <div class="buttons">
+            <button onclick="showWorkouts('menstrual')">Menstrual Phase</button>
+            <button onclick="showWorkouts('follicular')">Follicular Phase</button>
+            <button onclick="showWorkouts('ovulation')">Ovulation Phase</button>
+            <button onclick="showWorkouts('luteal')">Luteal Phase</button>
+        </div>
+
+        <div id="workouts" class="phase"></div>
+    <!-- Permanent Home Button -->
+    <a href="index.html" class="home-link">🏠 Home</a>
+
+    <script>
+        function showWorkouts(phase) {
+            let workoutContent = document.getElementById('workouts');
+            let homeBtn = document.getElementById('homeBtn');
+            let workouts = {
+                menstrual: "<h3>Menstrual Phase 🩸</h3><p>🌿 Gentle yoga , stretching , walking.</p>",
+                follicular: "<h3>Follicular Phase 🌱</h3><p>🏃‍♀️ Running , hiking , swimming.</p>",
+                ovulation: "<h3>Ovulation Phase 🔥</h3><p>💪 Spin , hiit , step climbing.</p>",
+                luteal: "<h3>Luteal Phase 🌙</h3><p>🧘‍♀️ Strength training , abs workouts, pilates.</p>"
+            };
+
+            workoutContent.innerHTML = workouts[phase];
+            workoutContent.classList.add("show");
+            homeBtn.style.display = "block"; // Show Home Button
+        }
+
+        function goHome() {
+            let workoutContent = document.getElementById('workouts');
+            let homeBtn = document.getElementById('homeBtn');
+            workoutContent.classList.remove("show");
+            workoutContent.innerHTML = ""; // Clear content
+            homeBtn.style.display = "none"; // Hide Home Button
+        }
+    </script>
+
+</body>
+</html>

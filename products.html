@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Cycle Products</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff6392, #ff8f70);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff476d;
+            padding: 15px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Product Grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            color: #ff476d;
+        }
+        .product p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart {
+            background: #ff476d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .add-to-cart:hover {
+            background: #ff2a50;
+            transform: scale(1.05);
+        }
+
+        /* Home Button */
+        .home-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #ff6392;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .home-btn:hover {
+            background: #ff2a50;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Menstrual Cycle Products</h1>
+    <div class="container">
+        <h2>Recommended Products</h2>
+
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="DALL·E 2025-02-20 19.54.23 - A realistic image of a menstrual cup. The cup is made of medical-grade silicone, bell-shaped with a small stem at the bottom for easy removal. It is p.webp" alt="Menstrual Cup">
+                <h3>Menstrual Cup</h3>
+                <p>Eco-friendly and reusable alternative to tampons.</p>
+                
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="DALL·E 2025-02-20 19.54.59 - A highly detailed realistic image of organic menstrual pads. The pads are made of natural, biodegradable materials like cotton and bamboo fiber. They .webp" alt="Organic Pads">
+                <h3>Organic Pads</h3>
+                <p>Soft, chemical-free, and biodegradable pads.</p>
+               
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="DALL·E 2025-02-20 19.56.22 - A realistic image of a heating pad placed on a soft fabric surface. The pad is plugged in, glowing slightly to indicate warmth. The background is cozy.webp" alt="Heating Pad">
+                <h3>Heating Pad</h3>
+                <p>Relieves cramps and discomfort during periods.</p>
+                
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="DALL·E 2025-02-20 19.55.53 - A realistic image of a steaming cup of herbal tea in a ceramic cup with a rustic wooden table background. Fresh herbs like mint, chamomile, and lemong.webp" alt="Herbal Tea">
+                <h3>Herbal Tea</h3>
+                <p>Calming tea to ease bloating and stress.</p>
+                
+            </div>
+        </div>
+
+        <!-- Home Button -->
+        <button onclick="goHome()" class="home-btn">🏠 Home</button>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html"; // Change this to the actual homepage link
+        }
+    </script>
+
+</body>
+</html>
